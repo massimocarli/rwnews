@@ -1,4 +1,4 @@
-package com.raywenderlick.rwnews
+package com.raywenderlich.rwnews
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

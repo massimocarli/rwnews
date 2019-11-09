@@ -1,4 +1,4 @@
-package com.raywenderlick.common
+package com.raywenderlich.common
 
 /**
  * Factory for object of type T

@@ -1,4 +1,4 @@
-package com.raywenderlick.rwnews
+package com.raywenderlich.rwnews
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
