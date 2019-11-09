@@ -1,7 +1,8 @@
-package com.raywenderlich.rwnews
+package com.raywenderlich.rwnews.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.raywenderlich.rwnews.R
 
 class MainActivity : AppCompatActivity() {
 
