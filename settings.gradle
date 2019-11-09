@@ -1,2 +1,2 @@
-include ':app', ':common', ':common-android', ':app-container'
+include ':app', ':common', ':common-android', ':app-container', ':news'
 rootProject.name='RwNews'
