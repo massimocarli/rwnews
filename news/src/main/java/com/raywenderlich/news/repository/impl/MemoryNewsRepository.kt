@@ -1,12 +1,15 @@
 package com.raywenderlich.news.repository.impl
 
+import com.raywenderlich.common.di.FeatureScope
 import com.raywenderlich.news.model.News
 import com.raywenderlich.news.repository.NewsRepository
+import javax.inject.Inject
 
 /**
  * Repository implementation in memory
  */
-class MemoryNewsRepository : NewsRepository {
+@FeatureScope
+class MemoryNewsRepository @Inject constructor() : NewsRepository {
 
   private val newsMap = mutableMapOf<Long, News>()
 

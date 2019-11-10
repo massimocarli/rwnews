@@ -8,13 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.raywenderlich.container.navigation.di.NavigationManagerFactory
+import com.raywenderlich.container.navigation.NavigationManager
 import com.raywenderlich.news.android.R
-import com.raywenderlich.news.android.di.NewsListPresenterFactory
+import com.raywenderlich.news.android.di.DaggerNewsAndroidComponent
 import com.raywenderlich.news.android.init.NewsAnchorPoints
 import com.raywenderlich.news.android.init.NewsDestinations
 import com.raywenderlich.news.android.model.NewsListModel
+import com.raywenderlich.news.android.presenter.NewsListPresenter
 import com.raywenderlich.news.android.ui.detail.NewsDetailFragment
+import javax.inject.Inject
 
 
 /**
@@ -22,11 +24,21 @@ import com.raywenderlich.news.android.ui.detail.NewsDetailFragment
  */
 class NewsListFragment : Fragment(), NewsListView {
 
-  private val newsListPresenter = NewsListPresenterFactory.instance
-  private val navigationManager = NavigationManagerFactory.instance
+  @Inject
+  lateinit var newsListPresenter: NewsListPresenter
+
+  //@Inject
+  lateinit var navigationManager: NavigationManager
+
   private lateinit var recyclerView: RecyclerView
   private lateinit var newsListViewAdapter: NewsListViewAdapter
   private val newsListModel = NewsListModel(emptyList())
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    DaggerNewsAndroidComponent.factory().create().inject(this)
+    //DaggerNewsComponent.builder().build()
+    super.onCreate(savedInstanceState)
+  }
 
   override fun onCreateView(
     inflater: LayoutInflater,

@@ -1,18 +1,21 @@
 package com.raywenderlich.news.android.presenter.impl
 
+import com.raywenderlich.common.android.di.FragmentScope
 import com.raywenderlich.common.android.mvp.impl.BasePresenter
 import com.raywenderlich.news.android.model.NewsListModel
 import com.raywenderlich.news.android.presenter.NewsListPresenter
 import com.raywenderlich.news.android.ui.list.NewsListView
-import com.raywenderlich.news.di.NewsRepositoryFactory
+import com.raywenderlich.news.repository.NewsRepository
+import javax.inject.Inject
 
 /**
  * Presenter for the display of the list
  */
-class NewsListPresenterImpl : BasePresenter<NewsListModel, NewsListView>(),
+@FragmentScope
+class NewsListPresenterImpl @Inject constructor(
+  private val newsRepository: NewsRepository
+) : BasePresenter<NewsListModel, NewsListView>(),
   NewsListPresenter {
-
-  val newsRepository = NewsRepositoryFactory.instance
 
   override fun displayNewsList() {
     val newsList = newsRepository.list()

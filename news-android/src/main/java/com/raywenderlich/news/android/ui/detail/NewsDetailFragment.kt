@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.raywenderlich.news.android.R
-import com.raywenderlich.news.android.di.NewsDetailPresenterFactory
+import com.raywenderlich.news.android.presenter.NewsDetailPresenter
 import com.raywenderlich.news.model.News
+import javax.inject.Inject
 
 /**
  * The Fragment for the news detail
  */
 class NewsDetailFragment : Fragment(), NewsDetailView {
 
-  private val newsDetailPresenter = NewsDetailPresenterFactory.instance
+
+  @Inject
+  lateinit var newsDetailPresenter: NewsDetailPresenter
   private lateinit var newsTitleTextView: TextView
   private lateinit var newsBodyTextView: TextView
 

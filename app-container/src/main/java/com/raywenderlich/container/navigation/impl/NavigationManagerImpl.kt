@@ -7,11 +7,14 @@ import com.raywenderlich.container.navigation.AnchorPoint
 import com.raywenderlich.container.navigation.Destination
 import com.raywenderlich.container.navigation.FragmentFactory
 import com.raywenderlich.container.navigation.NavigationManager
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Implementation for the NavigationManager
  */
-class NavigationManagerImpl : NavigationManager {
+@Singleton
+class NavigationManagerImpl @Inject constructor() : NavigationManager {
 
   private val TAG = "NavigationManager"
 

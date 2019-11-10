@@ -4,8 +4,8 @@ import android.app.Application
 import com.raywenderlich.container.initialization.di.InitManagerFactory
 import com.raywenderlich.container.navigation.AnchorPoint
 import com.raywenderlich.container.navigation.di.NavigationManagerFactory
-import com.raywenderlich.rwnews.R
 import com.raywenderlich.news.android.init.initNewsList
+import com.raywenderlich.rwnews.R
 
 
 enum class AnchorPoints : AnchorPoint {
